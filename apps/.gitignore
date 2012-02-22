@@ -28,5 +28,4 @@ gdb.setup
 libneondetection.so
 Application.mk
 Android.mk
-*/*/.*project
 !androidExamples/*/.*project
