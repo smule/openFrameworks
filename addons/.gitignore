@@ -29,3 +29,4 @@
 !ofxAssimpModelLoader/**
 ofxAndroid/ofAndroidLib/bin
 ofxAndroid/ofAndroidLib/gen
+.svn
