@@ -33,7 +33,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "EAGLView.h"
+#import "ofxEAGLView.h"
 #import "ofAppiPhoneWindow.h"
 
 @interface ofxiPhoneAppDelegate : NSObject <UIApplicationDelegate> {
@@ -43,7 +43,7 @@
     float				animationFrameInterval;
     id					displayLink;
 	
-	EAGLView			*glView;
+	ofxEAGLView			*glView;
 
 	NSLock				*glLock;
 }
@@ -51,7 +51,7 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url;
 -(void) receivedRotate:(NSNotification*)notification;
 -(void) setFrameRate:(float)frameRate;
--(EAGLView*) getGLView;
+-(ofxEAGLView*) getGLView;
 
 -(void)lockGL;
 -(void)unlockGL;

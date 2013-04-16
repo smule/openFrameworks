@@ -37,7 +37,7 @@
 		BB24E0D110DA9F4D00E9C588 /* ofAppiPhoneWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E02E10DA7C6100E9C588 /* ofAppiPhoneWindow.mm */; };
 		BB24E0D210DA9F4D00E9C588 /* ofxiPhoneImagePicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E03A10DA7C6100E9C588 /* ofxiPhoneImagePicker.mm */; };
 		BB24E0D410DA9F4F00E9C588 /* ofxiPhoneKeyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E03C10DA7C6100E9C588 /* ofxiPhoneKeyboard.mm */; };
-		BB24E0D510DA9F4F00E9C588 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E02A10DA7C6100E9C588 /* EAGLView.mm */; };
+		BB24E0D510DA9F4F00E9C588 /* ofxEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E02A10DA7C6100E9C588 /* ofxEAGLView.mm */; };
 		BB24E0D610DA9F5000E9C588 /* ofxiPhoneCoreLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E03710DA7C6100E9C588 /* ofxiPhoneCoreLocation.mm */; };
 		BB24E0D710DA9F5100E9C588 /* ofxiPhone.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E02610DA7C6100E9C588 /* ofxiPhone.h */; };
 		BB24E0D810DA9F5200E9C588 /* ofAppiPhoneWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E02D10DA7C6100E9C588 /* ofAppiPhoneWindow.h */; };
@@ -46,7 +46,7 @@
 		BB24E0DB10DA9F5600E9C588 /* ofxiPhoneAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E03510DA7C6100E9C588 /* ofxiPhoneAppDelegate.mm */; };
 		BB24E0DC10DA9F5700E9C588 /* ofxAccelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E02210DA7C6100E9C588 /* ofxAccelerometer.h */; };
 		BB24E0DD10DA9F5800E9C588 /* ofxiPhoneAccelerometer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E02F10DA7C6100E9C588 /* ofxiPhoneAccelerometer.mm */; };
-		BB24E0E110DA9F5C00E9C588 /* EAGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E02910DA7C6100E9C588 /* EAGLView.h */; };
+		BB24E0E110DA9F5C00E9C588 /* ofxEAGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E02910DA7C6100E9C588 /* ofxEAGLView.h */; };
 		BB24E0E210DA9F5C00E9C588 /* ofxiPhoneMapKitListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BB24E04110DA7C6100E9C588 /* ofxiPhoneMapKitListener.h */; };
 		BB24E0E310DA9F5D00E9C588 /* ofxiPhoneAlerts.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB24E03110DA7C6100E9C588 /* ofxiPhoneAlerts.mm */; };
 		BB3140C011BB09220019348E /* ES1Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3140BC11BB09220019348E /* ES1Renderer.h */; };
@@ -197,8 +197,8 @@
 		BB24E02510DA7C6100E9C588 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		BB24E02610DA7C6100E9C588 /* ofxiPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhone.h; sourceTree = "<group>"; };
 		BB24E02710DA7C6100E9C588 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
-		BB24E02910DA7C6100E9C588 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
-		BB24E02A10DA7C6100E9C588 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		BB24E02910DA7C6100E9C588 /* ofxEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxEAGLView.h; sourceTree = "<group>"; };
+		BB24E02A10DA7C6100E9C588 /* ofxEAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxEAGLView.mm; sourceTree = "<group>"; };
 		BB24E02D10DA7C6100E9C588 /* ofAppiPhoneWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofAppiPhoneWindow.h; sourceTree = "<group>"; };
 		BB24E02E10DA7C6100E9C588 /* ofAppiPhoneWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofAppiPhoneWindow.mm; sourceTree = "<group>"; };
 		BB24E02F10DA7C6100E9C588 /* ofxiPhoneAccelerometer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneAccelerometer.mm; sourceTree = "<group>"; };
@@ -493,8 +493,8 @@
 				E485F8B213632A7300E939D3 /* AVFoundationVideoGrabber.h */,
 				E485F8C513632B6600E939D3 /* AVFoundationVideoPlayer.h */,
 				E485F8C613632B6600E939D3 /* AVFoundationVideoPlayer.mm */,
-				BB24E02910DA7C6100E9C588 /* EAGLView.h */,
-				BB24E02A10DA7C6100E9C588 /* EAGLView.mm */,
+				BB24E02910DA7C6100E9C588 /* ofxEAGLView.h */,
+				BB24E02A10DA7C6100E9C588 /* ofxEAGLView.mm */,
 				BB3140C511BB098A0019348E /* ESRenderer.h */,
 				BB3140BC11BB09220019348E /* ES1Renderer.h */,
 				BB3140BD11BB09220019348E /* ES1Renderer.mm */,
@@ -763,7 +763,7 @@
 				BB24E0D810DA9F5200E9C588 /* ofAppiPhoneWindow.h in Headers */,
 				BB24E0DA10DA9F5500E9C588 /* ofxiPhoneExtras.h in Headers */,
 				BB24E0DC10DA9F5700E9C588 /* ofxAccelerometer.h in Headers */,
-				BB24E0E110DA9F5C00E9C588 /* EAGLView.h in Headers */,
+				BB24E0E110DA9F5C00E9C588 /* ofxEAGLView.h in Headers */,
 				BB24E0E210DA9F5C00E9C588 /* ofxiPhoneMapKitListener.h in Headers */,
 				BB3140C011BB09220019348E /* ES1Renderer.h in Headers */,
 				BB3140C211BB09220019348E /* ES2Renderer.h in Headers */,
@@ -894,7 +894,7 @@
 				BB24E0D110DA9F4D00E9C588 /* ofAppiPhoneWindow.mm in Sources */,
 				BB24E0D210DA9F4D00E9C588 /* ofxiPhoneImagePicker.mm in Sources */,
 				BB24E0D410DA9F4F00E9C588 /* ofxiPhoneKeyboard.mm in Sources */,
-				BB24E0D510DA9F4F00E9C588 /* EAGLView.mm in Sources */,
+				BB24E0D510DA9F4F00E9C588 /* ofxEAGLView.mm in Sources */,
 				BB24E0D610DA9F5000E9C588 /* ofxiPhoneCoreLocation.mm in Sources */,
 				BB24E0D910DA9F5400E9C588 /* ofxiPhoneMapKitDelegate.mm in Sources */,
 				BB24E0DB10DA9F5600E9C588 /* ofxiPhoneAppDelegate.mm in Sources */,

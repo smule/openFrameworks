@@ -70,7 +70,7 @@ UIWindow *ofxiPhoneGetUIWindow() {
 
 
 //--------------------------------------------------------------
-EAGLView *ofxiPhoneGetGLView() {
+ofxEAGLView *ofxiPhoneGetGLView() {
 	return [ofxiPhoneGetAppDelegate() getGLView];
 }
 

@@ -33,12 +33,12 @@
 #import "ofMain.h"
 #import  "ofxiPhoneExtras.h"
 
-#import "EAGLView.h"
+#import "ofxEAGLView.h"
 
 #import "ES1Renderer.h"
 #import "ES2Renderer.h"
 
-@implementation EAGLView
+@implementation ofxEAGLView
 
 // You must implement this method
 + (Class) layerClass
