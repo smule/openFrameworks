@@ -88,6 +88,13 @@ public:
 		}
 	}
 	
+	void registeredForAPNS(const char* devtoken, unsigned int devtokenlen)
+	{
+		for(std::list<ofxiPhoneAlertsListener*>::iterator it=listeners.begin(); it!=listeners.end(); ++it) {
+			ofxiPhoneAlertsListener* o = *it;
+			o->registeredForAPNS(devtoken, devtokenlen);
+		}
+	}
 	
 protected:
 	std::list<ofxiPhoneAlertsListener*> listeners;

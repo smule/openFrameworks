@@ -148,6 +148,14 @@
                                              selector: @selector(receivedRotate:) 
                                                  name: UIDeviceOrientationDidChangeNotification 
                                                object: nil];  
+	
+#if !TARGET_IPHONE_SIMULATOR
+	const int notificationFlags = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert;
+	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationType)notificationFlags];
+	// Clear application badge when app launches
+	application.applicationIconBadgeNumber = 0;
+#endif
+
 }
 
 
@@ -244,6 +252,8 @@
 
 
 -(void) applicationWillResignActive:(UIApplication *)application {
+	//NSLog(@"applicationWillResignActive");
+	
 	[self stopAnimation];
 	
 	ofxiPhoneAlerts.lostFocus();
@@ -259,8 +269,12 @@
 	ofxiPhoneAlerts.gotFocus();
 }
 
+//-(void) applicationDidEnterBackground:(UIApplication *)application {
+//	NSLog(@"applicationDidEnterBackground");
+//}
 
 -(void) applicationWillTerminate:(UIApplication *)application {
+	//NSLog(@"applicationWillTerminate");
 	[self stopAnimation];
 	
     // stop listening for orientation change notifications
@@ -276,13 +290,47 @@
 	ofxiPhoneAlerts.gotMemoryWarning();
 }
 
-
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-	
-	NSString *urlData = [url absoluteString];
-	const char * response = [urlData UTF8String];
+	NSString *urlString = [[url absoluteString] retain];
+	const char * response = [urlString UTF8String];
 	ofxiPhoneAlerts.launchedWithURL(response);
 	return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+	const char* deviceTokenBytes = deviceToken.bytes;
+	unsigned int deviceTokenLength = deviceToken.length;
+	ofxiPhoneAlerts.registeredForAPNS(deviceTokenBytes, deviceTokenLength);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+	NSLog(@"APNS Error:%@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+	
+	// Get and SHOW push notification when start APP
+	
+#if !TARGET_IPHONE_SIMULATOR
+    
+	NSLog(@"remote notification: %@",[userInfo description]);
+	NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+	
+	NSString *alert = [apsInfo objectForKey:@"alert"];	
+	NSLog(@"Received Push Alert: %@", alert);
+	UIAlertView* msgbox = [[UIAlertView alloc] initWithTitle:@"AutoRap Notification" message:alert delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[msgbox show];
+	
+	NSString *sound = [apsInfo objectForKey:@"sound"];
+	NSLog(@"Received Push Sound: %@", sound);
+	AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+	
+	NSString *badge = [apsInfo objectForKey:@"badge"];
+	NSLog(@"Received Push Badge: %@", badge);
+	application.applicationIconBadgeNumber = [[apsInfo objectForKey:@"badge"] integerValue];
+	
+#endif
+	
 }
 
 @end

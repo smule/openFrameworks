@@ -42,4 +42,5 @@ public:
 	virtual void gotMemoryWarning(){};
     virtual void deviceOrientationChanged(int newOrientation){};
 	virtual void launchedWithURL(string url){};
+	virtual void registeredForAPNS(const char* devtoken, unsigned int devtokenlen){};
 };
