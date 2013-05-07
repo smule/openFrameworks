@@ -298,7 +298,7 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-	const char* deviceTokenBytes = deviceToken.bytes;
+	const char* deviceTokenBytes = (const char*)deviceToken.bytes;
 	unsigned int deviceTokenLength = deviceToken.length;
 	ofxiPhoneAlerts.registeredForAPNS(deviceTokenBytes, deviceTokenLength);
 }
